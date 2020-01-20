@@ -17,6 +17,12 @@ class BlogController extends Controller
       
       //  dump($request->category);
        // dump(session('blog_category'));
+       if($request->search !=null)
+       {
+           $search = htmlspecialchars($request->search);
+        dump('searh',$request->search);
+       }
+       
       
         if((session('lang')) != null)
         {
@@ -37,14 +43,27 @@ class BlogController extends Controller
          $page_ru ='СТАТЬИ';
         
          session(['category'=>  $request->category]);
+
+    if($request->search !=null)
+    {
+        $blogs = App\Blog::
+        where('title_ru', 'like','%'.$search.'%')
         
- if($request->category == null || $request->category == 'all' ) {
-   
-     $blogs = App\Blog::orderBy('id', 'desc')->paginate(4);
- } else  {
-  
-     $blogs = App\Blog::where('category_id', '=', session('category'))->orderBy('id', 'desc')->paginate(4);
- }
+        ->orwhere('title_en', 'like','%'.$search.'%')
+        ->orwhere('title_ru', 'like','%'.$search.'%')
+        ->orwhere('description_ru', 'like','%'.$search.'%')
+        ->orwhere('description_en', 'like','%'.$search.'%')       
+        
+        ->orderBy('id', 'desc')->paginate(4);
+
+    }   
+    elseif($request->category == null || $request->category == 'all' )
+    {
+         $blogs = App\Blog::orderBy('id', 'desc')->paginate(4);
+    } else
+    {
+        $blogs = App\Blog::where('category_id', '=', session('category'))->orderBy('id', 'desc')->paginate(4);
+    }
    
       
        $lastblogs =  App\Blog::orderBy('id', 'desc')->take(2)->get();

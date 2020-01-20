@@ -119,8 +119,8 @@ class BlogSeeder extends Seeder
 
             'image' => 'about_2.png',
 
-            'title_ru' => 'Блог 6 Длинное название',
-            'title_en' => 'Blog 6 long name',
+            'title_ru' => 'Блог 6 Длинное название Длинное название Длинное название Длинное название Длинное название',
+            'title_en' => 'Blog 6 long name long name long name long name long name long name long name long name long name',
 
             'description_ru' => 'Описание обо мне Описание обо мне Описание обо мне ',
             'description_en' => 'description about description about description about 
