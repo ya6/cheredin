@@ -17,10 +17,11 @@ class BlogController extends Controller
       
       //  dump($request->category);
        // dump(session('blog_category'));
+       $search = null;
        if($request->search !=null)
        {
            $search = htmlspecialchars($request->search);
-        dump('searh',$request->search);
+       // dump('searh',$request->search);
        }
        
       
@@ -72,7 +73,7 @@ class BlogController extends Controller
        // dd($blogs);
      
          return view('Pages.blog.index', compact('page_en', 'page_ru', 'title_lang',
-          'category_lang', 'desc_lang', 'blogs', 'lastblogs', 'categories'));
+          'category_lang', 'desc_lang', 'blogs', 'lastblogs', 'categories', 'search'));
       
      }
     

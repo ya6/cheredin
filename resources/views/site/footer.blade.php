@@ -9,7 +9,7 @@
 
                        
                 <p><a  class="link text-light" 
-                    href="/blog">{{ $blog->$title_lang }}
+                    href="/blog">{{ Str::limit($blog->$title_lang, 30) }}
                 </a></p>
 
                     @endforeach
@@ -44,7 +44,7 @@
 
               <div class="d-flex">
               <div class="mx-auto text-light"><span>Copyright © 2020 @lang('Vladimir Cheredin') </span> </div> 
-              <div><a   class="" href="№" style ="font-size:0.7rem">site by Yakubouski A. st/03/11/19 up/19/01/20</a></div>
+              <div><a   class="" href="№" style ="font-size:0.7rem">site by Yakubouski A. st/03/11/19 up/20/01/20</a></div>
               </div>  
              
           

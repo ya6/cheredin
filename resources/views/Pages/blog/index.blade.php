@@ -6,8 +6,15 @@
 
 <div class="container">
     <h2 class="text-center my-4 text-navy ">@lang('BLOG')</h2>
+   @if($search != null)
+
+    @if(count($blogs)>0)
+    <h3 class="text-center">@lang('Serch for') "{{ $search }}" @lang('found') {{ count($blogs) }} @lang('posts')</h3>
+    @else
+    <h3 class="text-center">@lang('Serch for') "{{ $search }}" @lang('nothing found')</h3>
+    @endif
    
-    @if(session('category') != null) 
+    @elseif(session('category') != null) 
   <h3 class="text-center">{{ $categories[session('category')-1]->$category_lang}}</h3>
    @else    
    <h3 class="text-center">@lang('All categories')</h3>
@@ -72,6 +79,8 @@
                 <div class="card-body">
                     <h5 class="card-title">@lang('SEARCH')</h5>
                     <form id="search_form" class="form-inline my-2 my-lg-0" action="/blog" method="get">
+                    @csrf
+
                         <input id="search_input"
                             class="border-secondary bg-light form-control border-top-0 border-left-0 border-right-0 w-75 rounded-0"
                             type="search" placeholder="Search" aria-label="Se arch" name="search">
