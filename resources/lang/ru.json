@@ -39,11 +39,14 @@
 
     "Add new": "Добавить новый",
 
-    
+
 
     "Read more..": "Прочитать больше..",
 
     "See What We Do": "Посмотреть видео",
+
+    "View post": "Посмотреть пост",
+
 
 
     "Welcom to sport page of Bladimir Cheredin": "Спортивная страничка Владимира Чередина",
@@ -70,13 +73,17 @@
     "CATEGORIES": "КАТЕГОРИИ",
     "": "",
     "Choose file...": "Выберите файл...",
-    
+
     "Save": "Сохранить",
 
     "English": "Английcкий",
     "Russian": "Русский",
     "Title": "Название",
     "Description": "Описание",
+
+    "posts": "пост|поста|постов",
+    "Serch for": "Строка поиска",
+    "nothing found": "ничего не найдено",
 
 
     "EN EN": "RU RU"

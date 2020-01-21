@@ -9,9 +9,9 @@
    @if($search != null)
 
     @if(count($blogs)>0)
-    <h3 class="text-center">@lang('Serch for') "{{ $search }}" @lang('found') {{ count($blogs) }} @lang('posts')</h3>
+    <h3 class="text-center">@lang('Serch for'): "{{ $search }}" - {{ count($blogs) }} {{trans_choice('posts', count($blogs)) }}</h3>
     @else
-    <h3 class="text-center">@lang('Serch for') "{{ $search }}" @lang('nothing found')</h3>
+    <h3 class="text-center">@lang('Serch for'): "{{ $search }}" - @lang('nothing found')</h3>
     @endif
    
     @elseif(session('category') != null) 
@@ -50,7 +50,7 @@
                                     {{ $blog->category->$category_lang }}</p>
 
                                 <a name="" id="" class="rounded-0 mt-1 btn btn-outline-secondary " href="#"
-                                    role="button" style="width:10em"> More </a>
+                                    role="button" style="width:10em"> @lang('View post') </a>
                             </div>
 
                         </div>
