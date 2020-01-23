@@ -5,52 +5,41 @@
 @section('content')
 
 <div class="container">
-    <h2 class="text-center my-4 text-navy ">@lang('BLOG')</h2>
-   @if($search != null)
-
-    @if(count($blogs)>0)
-    <h3 class="text-center">@lang('Serch for'): "{{ $search }}" - {{ count($blogs) }} {{trans_choice('posts', count($blogs)) }}</h3>
-    @else
-    <h3 class="text-center">@lang('Serch for'): "{{ $search }}" - @lang('nothing found')</h3>
-    @endif
-   
-    @elseif(session('category') != null) 
-  <h3 class="text-center">{{ $categories[session('category')-1]->$category_lang}}</h3>
-   @else    
-   <h3 class="text-center">@lang('All categories')</h3>
-    @endif
-
+    <h2 class="text-center my-4 text-navy ">@lang('BLOG SINGLE')</h2>
+    
     <div class="row">
         <div class="order-xs-2  order-sm-2 order-md-1 col-sm-12 col-md-8" style="b order: 2px solid blue">
 
-            @foreach ($blogs as $blog)
+        
 
 
-            <div class="bg-light p-4" style="bo rder: 2px solid red">
+            <div class="bg-light p-4" style="b order: 2px solid red">
 
 
                 <div class="card border-0">
+                <p class="h6 mt-2"> <i class=" text-secondary material-icons align-text-top">watch</i>
+                                    {{ $blog->created_at->isoFormat('DD-MM-Y') }}</p>
                     <div class="card-header card border-0">
-                        <p class="h4 my-3">{{ Str::limit($blog->$title_lang, 50) }}</p>
+                        <p class="h4 my-3">{{ $blog->$title_lang }}</p>
                     </div>
                     <div class="card-body m-0 p-0">
 
-                        <div style="height: 200px; background-position: center center ; background-size: cover;
+                        <div style="height: 400px; background-position: center center ; background-size: cover;
                              background-repeat: norepeat; b order: 2px solid green;
                              background-image: url(/images/blogs/{{ $blog->image  ?? 'blog_default.jpg'}})">
+                        </div>
+                        <div class="my-4">
+                            <p class="h5">{{ $blog->$desc_lang }}</p>
                         </div>
 
                         <div class="row">
                             <div class="col">
-                                <p class="h6 mt-2"> <i class=" text-secondary material-icons align-text-top">watch</i>
-                                    {{ $blog->created_at->isoFormat('DD-MM-Y') }}</p>
+                                
                                 <p class="h5"> <i class="text-secondary material-icons align-top">person </i>
                                     {{ $blog->user->name }}</p>
                                 <p class="h6 "> <i class="text-secondary material-icons align-text-top ">label</i>
                                     {{ $blog->category->$category_lang }}</p>
 
-                                <a name="" id="" class="rounded-0 mt-1 btn btn-outline-secondary " href="/blog/{{ $blog->id }}"
-                                    role="button" style="width:10em"> @lang('View post') </a>
                             </div>
 
                         </div>
@@ -62,15 +51,9 @@
 
             </div>
             <br>
-            @endforeach
+           
 
 
-            <div class="row">
-                <div class="mx-auto"> @if(method_exists($blogs, 'links'))
-                    {{ $blogs->appends(['category' => session('category') ])->links() }}
-                    @endif
-                </div>
-            </div>
 
         </div> <!-- /row-8 -->
 

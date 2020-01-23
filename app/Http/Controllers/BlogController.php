@@ -105,9 +105,49 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,    $id)
     {
-        //
+      //  dump('BlogController@show');
+
+        $search = null;
+        if($request->search !=null)
+        {
+            $search = htmlspecialchars($request->search);
+        // dump('searh',$request->search);
+        }
+
+        if((session('lang')) != null)
+        {
+            
+           App::setLocale(session('lang'));
+   
+           $title_lang = 'title_'.session('lang') ;
+           $desc_lang = 'description_'.session('lang');
+           
+           $category_lang = 'category_'.session('lang');
+       } else {
+           $title_lang = 'title_en' ;
+           $desc_lang = 'description_en';
+           $category_lang = 'category_en';
+   }
+     
+         $page_en ='BLOG';
+         $page_ru ='СТАТЬИ';
+
+         
+       $lastblogs =  App\Blog::orderBy('id', 'desc')->take(2)->get();
+
+       $categories = App\Category::all();
+       // dd($blogs);
+
+       $blog = App\Blog::find($id);
+     
+         return view('Pages.blog.blog_single', compact('page_en', 'page_ru', 'title_lang',
+          'category_lang', 'desc_lang', 'blog', 'lastblogs', 'categories', 'search'));
+
+
+
+
     }
 
     /**
