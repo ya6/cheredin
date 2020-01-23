@@ -12,7 +12,12 @@
 
 <div class=" container ">
 
-   @include('inc.messages')
+  
+   @include('inc.flash_mess')
+   
+   @if(session('status')!= null)
+   {{ session('status') }}
+   @endif
 
     @foreach($categories as $category)
 

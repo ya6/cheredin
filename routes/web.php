@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,7 +49,7 @@ Route::resource('/admin/home_event', 'HomeEventController');
 Route::resource('/admin/partner', 'PartnerController');
 Route::resource('/admin/takepart', 'TakePartController');
 
-Route::resource('/admin/blog/category', 'CategoriesController');
+Route::resource('/admin/blog/category', 'CategoriesController')->name('get','profile');
 Route::resource('/admin/blog', 'AdminBlogsController');
 
 

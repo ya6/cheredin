@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use Illuminate\Http\Request;
 use App;
+use Lang;
 
 class CategoriesController extends Controller
 {
@@ -138,21 +139,29 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        dump('#category del');
+
+     //  dump('#category del');
+
+        App::setLocale(session('lang'));
+
         $category = category::find($id);
-    dump($category->blogs->count());
-    
        
         if ($category->blogs->count() > 0) {
 
             $categories = category::all();
-
-            $messages =[0 => 'У катерогии есть '.$category->blogs->count().' блога'];
-            return view('admin.category.index', compact('categories', 'messages'));
+            session()->flash('message',Lang::get('Can not delete!').' '
+            .Lang::get('This category has').' '.$category->blogs->count().' '
+            .Lang::choice('posts', $category->blogs->count()));
+         
+        }else 
+        {
+            $category->delete();
+            session()->flash('message',Lang::get('Delete successfully'));
         }
 
-        $category->delete();
+       
         $categories = category::all();
+       
 
         return view('admin.category.index', compact('categories'));
     }

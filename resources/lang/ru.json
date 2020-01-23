@@ -84,7 +84,9 @@
     "posts": "пост|поста|постов",
     "Serch for": "Строка поиска",
     "nothing found": "ничего не найдено",
-
+    "Can not delete!": "Нельзя удалить!",
+    "This category has":"В этой категории",
+    "Delete successfully":"Удалено успешно",
 
     "EN EN": "RU RU"
 }
