@@ -21,7 +21,7 @@
     @endif
 
     <div class="row">
-        <div class="col-sm-12 col-md-8" style="b order: 2px solid blue">
+        <div class="order-sm-2  order-md-1 col-sm-12 col-md-8" style="border: 2px solid blue">
 
             @foreach ($blogs as $blog)
 
@@ -74,8 +74,8 @@
 
         </div> <!-- /row-8 -->
 
-        <div class="col-4 d-none d-md-block" style="b order: 2px solid blue">
-            <div class="card rounded-0  bg-light" style="width: 18rem;">
+        <div class="order-sm-1  order-md-2 col-md-4 col-sm-12" style="border: 2px solid green">
+            <div class="card rounded-0  bg-light" style="w idth: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">@lang('SEARCH')</h5>
                     <form id="search_form" class="form-inline my-2 my-lg-0" action="/blog" method="get">
@@ -91,7 +91,7 @@
             </div>
 
             </br>
-            <div class="card rounded-0 bg-light" style="width: 18rem;">
+            <div class="card rounded-0 bg-light" style="w idth: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">@lang('CATEGORIES')</h5>
                     <ul class="navbar-nav ">
