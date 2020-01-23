@@ -21,7 +21,7 @@
     @endif
 
     <div class="row">
-        <div class="order-sm-2  order-md-1 col-sm-12 col-md-8" style="border: 2px solid blue">
+        <div class="order-xs-2  order-sm-2 order-md-1 col-sm-12 col-md-8" style="border: 2px solid blue">
 
             @foreach ($blogs as $blog)
 
@@ -74,7 +74,7 @@
 
         </div> <!-- /row-8 -->
 
-        <div class="order-sm-1  order-md-2 col-md-4 col-sm-12" style="border: 2px solid green">
+        <div class="order-xs-1  order-sm-1 order-md-2 col-md-4 col-sm-12" style="border: 2px solid green">
             <div class="card rounded-0  bg-light" style="w idth: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">@lang('SEARCH')</h5>

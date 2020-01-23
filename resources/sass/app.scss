@@ -1,18 +1,24 @@
-
-
-
 // Variables
 @import 'variables';
-
-
-.text-navy {color:#000080;}
-.bg-navy {background:#000080;}
-
-
-@media (min-width: 768px)
-{
-    .over_collapse {
-        display: block !important;
-    } 
+.text-navy {
+    color: #000080;
 }
 
+.bg-navy {
+    background: #000080;
+}
+
+@media (min-width: 768px) {
+    .over_collapse {
+        display: block !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .order-xs-1 {
+        order: 1 !important;
+    }
+    .order-xs-2 {
+        order: 2 !important;
+    }
+}
