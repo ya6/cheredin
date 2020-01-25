@@ -15,10 +15,7 @@
   
    @include('inc.flash_mess')
    
-   @if(session('status')!= null)
-   {{ session('status') }}
-   @endif
-
+   
     @foreach($categories as $category)
 
     <div class="row p-3" style="b order: 1px solid green">

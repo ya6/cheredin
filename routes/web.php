@@ -26,6 +26,9 @@ Route::get('/about', 'AboutController@index');
 Route::resource('/blog', 'BlogController');
 Route::resource('/contact', 'ContactController');
 
+Route::post('/send', 'MailController@mail');
+
+
 
 
 

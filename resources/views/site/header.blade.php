@@ -56,6 +56,7 @@
 <div  class="conratner-fluid bg-navy text-light text-center mt-5 pt-1" style="text-transform: uppercase; min-height:2.4rem">
 <h3>@lang('Personal sport page')</h3>
 </div>    
-
+ 
+@include('inc.flash_mess')
 </header>
 

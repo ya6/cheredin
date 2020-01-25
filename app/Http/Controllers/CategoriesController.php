@@ -158,11 +158,7 @@ class CategoriesController extends Controller
             $category->delete();
             session()->flash('message',Lang::get('Delete successfully'));
         }
-
-       
-        $categories = category::all();
-       
-
-        return view('admin.category.index', compact('categories'));
+        
+        return back();
     }
 }
