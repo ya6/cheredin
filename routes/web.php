@@ -13,7 +13,7 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
+//dd(App::getLocale());
 Route::post('/lang', 'LangController@index');
 
 Route::get('/', 'SiteController@index');

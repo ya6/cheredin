@@ -9,7 +9,8 @@ class SiteController extends Controller
 {
     public function index(Request $request)
     {
-//dd(session('lang'));
+//dd(App::getLocale());
+
     if((session('lang')) != null)
      {
          
