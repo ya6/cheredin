@@ -94,7 +94,44 @@
 
                     <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion2">
                         <div class="card-body">
-                            Электройная почта В комментарии не отбражается
+                        <div class="col p-5 mx-auto" style="max-width:700px">
+   
+   <form action="/blog/{{$blog->id}}/comment" method="post" style="margin-top:0%"> 
+             @csrf
+               <div class="form-group ">
+                   <div class="input-group mb-2 ">
+                       <div class="input-group-prepend">
+                           <div class="input-group-text rounded-0" style="width:7rem">@lang('Name')</div>
+                       </div>
+                       <input type="text" class="form-control rounded-0"  name="name"  required>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <div class="input-group mb-2">
+                       <div class="input-group-prepend">
+                           <div class="input-group-text rounded-0" style="width:7rem">@lang('E-mail')</div>
+                       </div>
+                       <input type="email" class="form-control rounded-0" name="email"  required>
+                   </div>
+               </div>
+
+               <div class="form-group">
+                   <div class="input-group mb-2">
+                       <div class="input-group-prepend">
+                           <div class="input-group-text rounded-0" style="width:7rem">@lang('Message')</div>
+                       </div>
+                       <textarea  name="comment" class="form-control rounded-0"  required></textarea>
+                   </div>
+               </div>
+
+               <div class=" mt-5 text-center">
+                   <button  type="submit"  class="btn btn-outline-secondary btn-block rounded-0 py-2" 
+                   style="border: 1px solid #ccc">@lang('Send')</button>
+               </div>
+
+   </form>
+
+</div>
                         </div>
                     </div>
 

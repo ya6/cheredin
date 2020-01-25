@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use App\Comment;
 use Illuminate\Http\Request;
-
+use App;
 class CommentController extends Controller
 {
     /**
@@ -33,9 +34,24 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+
+      //  dump('CommentController@store');
+  
+        $attributes =  $request->validate([
+            'image' => 'image',
+            'name' => 'required',
+            'email' => 'required',
+            'comment' => 'required',
+           
+        ]);
+
+        $attributes['blog_id'] = $id;
+
+ Comment::create($attributes);
+
+return back();
     }
 
     /**

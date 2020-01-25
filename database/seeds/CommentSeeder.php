@@ -44,8 +44,6 @@ class CommentSeeder extends Seeder
             
             'blog_id' => '6',
            
-            'image' => 'about.jpg',
-
             'name' => 'Petya',
             'email' => 'petia@mail.ru',
 

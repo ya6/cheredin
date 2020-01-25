@@ -11,7 +11,8 @@ class Comment extends Model
         'name',
         'email',
         'site',
-        'comment'
+        'comment',
+        'blog_id'
 
     ];
     public function blog()

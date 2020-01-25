@@ -15,6 +15,7 @@
 // });
 //dd(App::getLocale());
 Route::post('/lang', 'LangController@index');
+Route::post('/blog/{id}/comment', 'CommentController@store');
 
 Route::get('/', 'SiteController@index');
 
