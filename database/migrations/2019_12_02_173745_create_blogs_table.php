@@ -28,9 +28,6 @@ class CreateBlogsTable extends Migration
             $table->text('description_en');
 
            
-           
-
-
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

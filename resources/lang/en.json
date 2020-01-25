@@ -1,3 +1,4 @@
 {
-    "posts": "post|posts"
+    "posts": "post|posts",
+    "comments": "comment|comments"
 }

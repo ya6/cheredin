@@ -6,18 +6,19 @@
 
 <div class="container">
     <h2 class="text-center my-4 text-navy ">@lang('BLOG')</h2>
-   @if($search != null)
+    @if($search != null)
 
     @if(count($blogs)>0)
-    <h3 class="text-center">@lang('Serch for'): "{{ $search }}" - {{ count($blogs) }} {{trans_choice('posts', count($blogs)) }}</h3>
+    <h3 class="text-center">@lang('Serch for'): "{{ $search }}" - {{ count($blogs) }}
+        {{trans_choice('posts', count($blogs)) }}</h3>
     @else
     <h3 class="text-center">@lang('Serch for'): "{{ $search }}" - @lang('nothing found')</h3>
     @endif
-   
-    @elseif(session('category') != null) 
-  <h3 class="text-center">{{ $categories[session('category')-1]->$category_lang}}</h3>
-   @else    
-   <h3 class="text-center">@lang('All categories')</h3>
+
+    @elseif(session('category') != null)
+    <h3 class="text-center">{{ $categories[session('category')-1]->$category_lang}}</h3>
+    @else
+    <h3 class="text-center">@lang('All categories')</h3>
     @endif
 
     <div class="row">
@@ -33,15 +34,16 @@
                     <div class="card-header card border-0">
                         <p class="h4 my-3">{{ Str::limit($blog->$title_lang, 50) }}</p>
                     </div>
+
                     <div class="card-body m-0 p-0">
 
                         <div style="height: 200px; background-position: center center ; background-size: cover;
-                             background-repeat: norepeat; b order: 2px solid green;
-                             background-image: url(/images/blogs/{{ $blog->image  ?? 'blog_default.jpg'}})">
+                             background-repeat: norepeat; 
+                             background-image: url(/images/blogs/{{ $blog->image  ?? 'blog_default.jpg'}} )">
                         </div>
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col pl-5 pb-3">
                                 <p class="h6 mt-2"> <i class=" text-secondary material-icons align-text-top">watch</i>
                                     {{ $blog->created_at->isoFormat('DD-MM-Y') }}</p>
                                 <p class="h5"> <i class="text-secondary material-icons align-top">person </i>
@@ -49,12 +51,16 @@
                                 <p class="h6 "> <i class="text-secondary material-icons align-text-top ">label</i>
                                     {{ $blog->category->$category_lang }}</p>
 
-                                <a name="" id="" class="rounded-0 mt-1 btn btn-outline-secondary " href="/blog/{{ $blog->id }}"
-                                    role="button" style="width:10em"> @lang('View post') </a>
                             </div>
-
+                            <div class="col pr-5 d-flex justify-content-end align-items-center">
+                                <p class=" h6"> <i class=" text-secondary material-icons align-text-top">comment</i>
+                                {{$blog->comments()->count().' '.trans_choice('comments', $blog->comments()->count()) }} 
+                            </div>
                         </div>
-
+                        <div class=" ml-4 mb-4" style="b order:1px solid red">
+                            <a name="" id="" class="rounded-0    btn btn-outline-secondary "
+                            href="/blog/{{ $blog->id }}" role="button" style="width:10em"> @lang('View post') </a>
+                        </div>
                     </div>
 
 
@@ -79,7 +85,7 @@
                 <div class="card-body">
                     <h5 class="card-title">@lang('SEARCH')</h5>
                     <form id="search_form" class="form-inline my-2 my-lg-0" action="/blog" method="get">
-                    @csrf
+                        @csrf
 
                         <input id="search_input"
                             class="border-secondary bg-light form-control border-top-0 border-left-0 border-right-0 w-75 rounded-0"
@@ -144,9 +150,9 @@
 
     search_btn.addEventListener('click', (e) => {
         e.preventDefault();
-       // console.log(search_input.value);
+        // console.log(search_input.value);
         if (search_input.value != "")
-        search_form.submit();
+            search_form.submit();
     });
 
 </script>

@@ -35,56 +35,76 @@
                     </div>
                 </div>
             </div>
-           
-<!-- Comments accordeon -->
 
-<!--  -->
+            <!-- Comments accordeon -->
 
-<div id="accordion1" class="mt-0">
-  <div class="card rounded-0 border-left-0 border-right-0">
+            <!--  -->
 
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-         @lang('All Comments')   5 шт.
-        </button>
-      </h5>
-    </div>
+            <div id="accordion1" class="mt-0">
+                <div class="card rounded-0 border-left-0  border-top-0 border-bottom-0 border-right-0">
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion1">
-      <div class="card-body">
-  Комменты к посту
-      </div>
-    </div>
+                    <div class="card-header border-0" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                <i class=" text-secondary material-icons align-text-top">comment</i>
+                                {{$blog->comments()->count().' '.trans_choice('comments', $blog->comments()->count()) }}
+                            </button>
+                        </h5>
+                    </div>
 
-  </div> 
-</div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion1">
+                        <div class="card-body">
 
+                            @foreach($blog->comments as $comment)
+                            <div class="media">
+                                <img src="/images/comment/{{$comment->image ?? 'comment_default.jpg' }}" 
+                                class=" img-thumbnail align-self-start mr-3" alt="face" width="50">
+                                <div class="media-body">
+                                    <h6 class="text-navy mt-0"><strong> {{ $comment->name.', ' }} </strong>
+                                    {{$comment->updated_at->diffForHumans() }}</h6>
 
-<div id="accordion2" class="mt-0">
-  <div class="card rounded-0 border-left-0 border-right-0">
+                                    <p>{{ $comment->comment }}</p>
+                                   
+                                </div>
+                            </div>
 
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-         @lang('Write a comment')
-        </button>
-      </h5>
-    </div>
+                         
+                            @endforeach
 
-    <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion2">
-      <div class="card-body">
- Электройная почта В комментарии не отбражается
-      </div>
-    </div>
+                        </div>
+                    </div>
 
-  </div>
-</div>
+                </div>
+            </div>
 
 
+            <div id="accordion2" class="mt-0">
+                <div class="card rounded-0 border-left-0  border-top-0 border-bottom-0 border-right-0">
+
+                    <div class="card-header border-0" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
+                                aria-expanded="true" aria-controls="collapseTwo">
+                                <i class=" text-secondary material-icons align-text-top">create</i> @lang('Write a
+                                comment')
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion2">
+                        <div class="card-body">
+                            Электройная почта В комментарии не отбражается
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
 
-<!-- /Comments accordeon -->
+
+
+            <!-- /Comments accordeon -->
 
         </div> <!-- /row-8 -->
 
