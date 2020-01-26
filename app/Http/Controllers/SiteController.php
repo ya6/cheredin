@@ -11,7 +11,7 @@ class SiteController extends Controller
     {
 //dd(App::getLocale());
 
-    if((session('lang')) != null)
+    if((session('lang')) != '')
      {
          
         App::setLocale(session('lang'));
@@ -19,8 +19,8 @@ class SiteController extends Controller
         $title_lang = 'title_'.session('lang') ;
         $desc_lang = 'description_'.session('lang');
     } else {
-        $title_lang = 'title_en' ;
-        $desc_lang = 'description_en';
+        $title_lang = 'title_ru' ;
+        $desc_lang = 'description_ru';
 }
       $page_en ='HOME';
       $page_ru ='ГЛАВНАЯ';

@@ -167,7 +167,7 @@
                     <h5 class="card-title">@lang('CATEGORIES')</h5>
                     <ul class="navbar-nav ">
                         <li class="nav-item ">
-                            <a class="nav-link text-secondary" href="/blog">@lang('All categories') </a>
+                            <a class="nav-link text-secondary" href="/blog">@lang('All blogs') </a>
                         </li>
                         @foreach ($categories as $category)
                         <li class="nav-item ">

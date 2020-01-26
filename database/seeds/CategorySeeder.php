@@ -26,7 +26,7 @@ class CategorySeeder extends Seeder
 
            
             'category_en' => 'Photos',
-            'category_ru' => 'фото',
+            'category_ru' => 'Фото',
             
             'created_at' => now(),
             'updated_at' => now(),
