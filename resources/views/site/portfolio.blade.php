@@ -5,7 +5,7 @@
 
     @for ($i = 0; $i < ($photos->count()<7 ? $photos->count() : 6 ) ; $i++)
     <div class=" col-md-3 card rounded-0 bg-light p-0 m-3" style="width: 18rem;">
-            <img class="card-img-top" src="/images/photos/{{ $photos[$i]->image}} " alt="Card image cap">
+            <img class="card-img-top" src="/images/home_photos/{{ $photos[$i]->image}} " alt="Card image cap">
             <div class="card-body">
              
                 <p>{{ $photos[$i]->$desc_lang }}</p>

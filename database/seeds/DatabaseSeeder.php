@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
          $this->call(HomeVideoSeeder::class);
          $this->call(HomeEventSeeder::class);
          $this->call(CommentSeeder::class);
-     
+         $this->call(PhotosSeeder::class);
          
     }
 }
