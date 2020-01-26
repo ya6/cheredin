@@ -1,8 +1,22 @@
 <?php
 
-if ( !function_exists('ya_test') )
+
+if ( !function_exists('current_lacale') )
 {
-	function ya_test(){
-		return 'ya_test helper';
+	function current_lacale()
+	{
+
+	//	dump(App::getLocale());
+	//	dd(session('lang'));
+
+		if((session('lang')) != null)
+     	{ 
+			App::setLocale(session('lang'));
+			
+			return App::getLocale();;
+		}
+
+		else return 'ru';
 	}
+
 }

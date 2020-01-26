@@ -9,19 +9,23 @@ class SiteController extends Controller
 {
     public function index(Request $request)
     {
-//dd(App::getLocale());
+    
+      //  dd(current_lacale());
 
-    if((session('lang')) != '')
-     {
-         
-        App::setLocale(session('lang'));
+      $title_lang = 'title_'.current_lacale() ;
+      $desc_lang = 'description_'.current_lacale();
+ 
 
-        $title_lang = 'title_'.session('lang') ;
-        $desc_lang = 'description_'.session('lang');
-    } else {
-        $title_lang = 'title_ru' ;
-        $desc_lang = 'description_ru';
-}
+//     if((session('lang')) != '')
+//      {
+//         App::setLocale(session('lang'));
+
+//         $title_lang = 'title_'.session('lang') ;
+//         $desc_lang = 'description_'.session('lang');
+//     } else {
+//         $title_lang = 'title_ru' ;
+//         $desc_lang = 'description_ru';
+// }
       $page_en ='HOME';
       $page_ru ='ГЛАВНАЯ';
 

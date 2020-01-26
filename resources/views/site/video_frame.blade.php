@@ -32,8 +32,7 @@
 
           <div class="embed-responsive embed-responsive-16by9">
             
-  <!-- <iframe id = "vid" class="embed-responsive-item" src="videos/{{$home_video->video}}?rel=0"></iframe> -->
-  <video id = "vid" src="videos/{{$home_video->video}}?rel=0" controls></video> 
+  <iframe id = "vid" class="embed-responsive-item" src="videos/{{$home_video->video}}?rel=0"></iframe>
   
 </div>
 
@@ -47,12 +46,18 @@
  <script>
   let video = document.querySelector('#vid');
   let modalclose= document.querySelector('.close');
-  document.addEventListener("DOMContentLoaded", function(e)
-  {
-      modalclose.addEventListener('click', function(e)
-      {
-        video.pause();
-      });
-  });  
+  document.addEventListener("DOMContentLoaded", function(e) {
+   
+   
+  console.log('DOMContentLoaded');
+    video.contentWindow.document.body.children[0].pause();
+  });
+  
+  console.log(modalclose);
+  modalclose.addEventListener('click', function(e){
+ console.log('click');
+video.contentWindow.document.body.children[0].pause();
+  });
+  
   </script>
  @endsection
