@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container">
-    <h2 class="text-center my-4 text-navy ">@lang('BLOG SINGLE')</h2>
+    <h2 class="text-center  my-4 text-navy ">@lang('Blog single')</h2>
 
     <div class="row">
         <div class="order-xs-2  order-sm-2 order-md-1 col-sm-12 col-md-8" style="b order: 2px solid blue">
@@ -86,8 +86,7 @@
                         <h5 class="mb-0">
                             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
                                 aria-expanded="true" aria-controls="collapseTwo">
-                                <i class=" text-secondary material-icons align-text-top">create</i> @lang('Write a
-                                comment')
+                                <i class=" text-secondary material-icons align-text-top">create</i> @lang('Write a comment')
                             </button>
                         </h5>
                     </div>
@@ -148,13 +147,13 @@
         <div class="order-xs-1  order-sm-1 order-md-2 col-md-4 col-sm-12 my-xs-4" style="b order: 2px solid green">
             <div class="card rounded-0  bg-light" style="w idth: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">@lang('SEARCH')</h5>
+                    <h5 class="card-title text-uppercase">@lang('Search')</h5>
                     <form id="search_form" class="form-inline my-2 my-lg-0" action="/blog" method="get">
                         @csrf
 
                         <input id="search_input"
                             class="border-secondary bg-light form-control border-top-0 border-left-0 border-right-0 w-75 rounded-0"
-                            type="search" placeholder="Search" aria-label="Se arch" name="search">
+                            type="search" placeholder="@lang('Search')" aria-label="Search" name="search">
                         <button id="search_btn" class="btn btn-outline-secondary  rounded-0" type="submit">
                             <i class="material-icons align-bottom">search</i></button>
                     </form>
@@ -164,10 +163,10 @@
             </br>
             <div class="card rounded-0 bg-light" style="w idth: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">@lang('CATEGORIES')</h5>
+                    <h5 class="card-title text-uppercase ">@lang('Categories')</h5>
                     <ul class="navbar-nav ">
                         <li class="nav-item ">
-                            <a class="nav-link text-secondary" href="/blog">@lang('All blogs') </a>
+                            <a class="nav-link text-secondary" href="/blog">@lang('All') </a>
                         </li>
                         @foreach ($categories as $category)
                         <li class="nav-item ">

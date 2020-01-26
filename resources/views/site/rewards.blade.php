@@ -1,5 +1,5 @@
 <div class="container-fluid" style="margin: 100px 0;">
-    <h2 class="text-center mb-5 text-navy">@lang('REWARDS')</h2>
+    <h2 class="text-center text-uppercase mb-5 text-navy">@lang('Rewards')</h2>
 <hr>
 
 

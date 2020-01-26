@@ -11,22 +11,22 @@
   <div class="collapse navbar-collapse text-navy" id="mainnav" >
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto ">
       <li class="nav-item ">
-        <a class="nav-link " href="/">@lang('HOME') </a>
+        <a class="nav-link text-uppercase" href="/">@lang('Home') </a>
       </li>
       <li class="nav-item mx-3">
-        <a class="nav-link" href="/about">@lang('ABOUT ME')</a>
-      </li>
-
-      <li class="nav-item mx-3">
-        <a class="nav-link" href="/portfolio">@lang('MEDIA GALLERY')</a>
+        <a class="nav-link text-uppercase " href="/about">@lang('About me')</a>
       </li>
 
       <li class="nav-item mx-3">
-        <a class="nav-link" href="/blog">@lang('BLOG')</a>
+        <a class="nav-link text-uppercase" href="/portfolio">@lang('Media gallery')</a>
       </li>
 
       <li class="nav-item mx-3">
-        <a class="nav-link" href="/contact">@lang('CONTACTS')</a>
+        <a class="nav-link text-uppercase" href="/blog">@lang('Blog')</a>
+      </li>
+
+      <li class="nav-item mx-3">
+        <a class="nav-link text-uppercase" href="/contact">@lang('Contacts')</a>
       </li>
       
 

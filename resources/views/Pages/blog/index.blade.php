@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container">
-    <h2 class="text-center my-4 text-navy ">@lang('BLOG')</h2>
+    <h2 class="text-center my-4 text-navy ">@lang('Blog')</h2>
     @if($search != null)
 
     @if(count($blogs)>0)
@@ -18,7 +18,7 @@
     @elseif(session('category') != null)
     <h3 class="text-center">{{ $categories[session('category')-1]->$category_lang}}</h3>
     @else
-    <h3 class="text-center">@lang('All blogs')</h3>
+    <h3 class="text-center">@lang('All')</h3>
     @endif
 
     <div class="row">
@@ -99,10 +99,10 @@
             </br>
             <div class="card rounded-0 bg-light" style="w idth: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">@lang('CATEGORIES')</h5>
+                    <h5 class="card-title text-uppercase">@lang('Categories')</h5>
                     <ul class="navbar-nav ">
                         <li class="nav-item ">
-                            <a class="nav-link text-secondary" href="/blog">@lang('All blogs') </a>
+                            <a class="nav-link text-secondary" href="/blog">@lang('All') </a>
                         </li>
                         @foreach ($categories as $category)
                         <li class="nav-item ">

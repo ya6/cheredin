@@ -6,7 +6,7 @@
 
 <div class="container-fluid" >
 
-    <h2 class="text-center my-4 text-navy ">@lang('CONTACTS')</h2>
+    <h2 class="text-center text-uppercase  my-4 text-navy ">@lang('Contacts')</h2>
 
     <div class="row justify-content-center">
 

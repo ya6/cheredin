@@ -1,5 +1,5 @@
 <div class="container-fluid" style="margin: 100px 0">
-    <h2 class="text-center text-navy">@lang('WORKOUT')</h2>
+    <h2 class="text-center text-uppercase text-navy">@lang('Workout')</h2>
 
     <div class="row justify-content-center">
 

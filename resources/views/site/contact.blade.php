@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 150px">
-    <h2 class="text-center mb-2 text-navy">@lang('WRITE ME')</h2>
+    <h2 class="text-center mb-2 text-navy">@lang('Write me')</h2>
     <div class="row">
     
        

@@ -1,5 +1,5 @@
 <div class="container-fluid ">
-    <h2 class="text-center mb-5 text-navy">@lang('TAKE PART')</h2>
+    <h2 class="text-center text-uppercase mb-5 text-navy">@lang('Take part')</h2>
 
     <div class="row">
     

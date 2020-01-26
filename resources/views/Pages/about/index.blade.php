@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container-fluid" >
-    <h2 class="text-center my-4 text-navy ">@lang('ABOUT ME')</h2>
+    <h2 class="text-center text-uppercase my-4 text-navy ">@lang('About me')</h2>
 
     <div class="row">
     

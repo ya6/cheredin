@@ -25,7 +25,7 @@ style=" max-width: 100%;  max-height: 80%; z-index:1000; top:50%; left:50%;  tra
 
 
 <div class="container mx-auto"   id="gallery_cont"  style="margin: 30px 0;">
-    <h2 class="text-center text-navy">@lang('PHOTOS')</h2>
+    <h2 class="text-center text-uppercase text-navy">@lang('Photos')</h2>
 
     <div   class="row justify-content-around">
         
@@ -46,7 +46,7 @@ style=" max-width: 100%;  max-height: 80%; z-index:1000; top:50%; left:50%;  tra
 
 <!-- REWARDS -->
 
-    <h2 class="text-center text-navy">@lang('REWARDS')</h2>
+    <h2 class="text-center text-uppercase text-navy">@lang('Rewards')</h2>
 
     <div   id="gallery_cont" class="row justify-content-around">
 

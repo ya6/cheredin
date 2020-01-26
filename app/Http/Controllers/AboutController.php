@@ -21,8 +21,8 @@ class AboutController extends Controller
          $title_lang = 'title_en' ;
          $desc_lang = 'description_en';
      }
-    $page_en ='ABOUT ME';
-    $page_ru ='ОБО МНЕ';
+    $page_en ='About me';
+    $page_ru ='Обо мне';
 
     $about = App\About::first();
     $lastblogs =  App\Blog::orderBy('id', 'desc')->take(2)->get();

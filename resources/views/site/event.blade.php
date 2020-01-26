@@ -1,5 +1,5 @@
 <div class="container-fluid" s tyle="border: 2px solid blue;">
-    <h2 class="text-center mb-5 text-navy">@lang('EVENTS')</h2>
+    <h2 class="text-center text-uppercase mb-5 text-navy">@lang('Events')</h2>
 
     <div class="row">
 

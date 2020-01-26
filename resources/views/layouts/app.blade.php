@@ -109,11 +109,11 @@
                   </a>
                   <div class="dropdown-menu dropdown-menu-small">
                     <a class="dropdown-item" href="user-profile-lite.html">
-                      <i class="material-icons ">&#xE7FD;</i> Profile</a>
+                      <i class="material-icons ">&#xE7FD;</i> @lang('Profile')</a>
                     
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="#">
-                      <i class="material-icons   text-danger">&#xE879;</i> Logout </a>
+                      <i class="material-icons   text-danger">&#xE879;</i> @lang('Logout') </a>
                   </div>
                 </li>
                 </ul>
@@ -131,7 +131,7 @@
             <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
               <a class="navbar-brand w-100 mr-0" href="/admin" style="line-height: 37px;">
                 <div class="d-table m-auto">
-                  <span class="d-none d-md-inline mx-auto">Dashboard</span>
+                  <span class="d-none d-md-inline mx-auto">@lang('Dashboard')</span>
                 </div>
               </a>             
             </nav>
@@ -148,62 +148,62 @@
               <li class="nav-item">
                 <a class="nav-link " href="/admin/slider">
                   <i class="material-icons align-bottom">slideshow</i>
-                  <span>Slider</span>
+                  <span>@lang('Slider')</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="/admin/workout">
                   <i class="material-icons align-bottom">poll</i>
-                  <span>Workout</span>
+                  <span>@lang('Workout')</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="/admin/home_about/1">
                   <i class="material-icons align-bottom">person</i>
-                  <span>About me</span>
+                  <span>@lang('About me')</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="/admin/home_photo">
                   <i class="material-icons  align-bottom">photo_album</i>
-                  <span>Photos</span>
+                  <span>@lang('Photos')</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="/admin/home_video">
                   <i class="material-icons  align-bottom">videocam</i>
-                  <span>Video</span>
+                  <span>@lang('Video')</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="/admin/reward">
                   <i class="material-icons  align-bottom">stars</i>
-                  <span>Rewards</span>
+                  <span>@lang('Rewards')</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="/admin/home_event/1">
                   <i class="material-icons  align-bottom">event</i>
-                  <span>Events</span>
+                  <span>@lang('Events')</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="/admin/partner">
                   <i class="material-icons  align-bottom">group</i>
-                  <span>Partners</span>
+                  <span>@lang('Partners')</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="/admin/takepart/1">
                   <i class="material-icons  align-bottom">emoji_people</i>
-                  <span>Take part</span>
+                  <span>@lang('Take part')</span>
                 </a>
               </li>
             </ul>
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center pr-3 mt-4 mb-1 text-muted">
             <a class="nav-link active" href="/admin/about/1">
-              <span>@lang('ABOUT ME')</span>
+              <span>@lang('About me')</span>
             </a>
             <i class="material-icons  align-bottom">person</i>
             </h6>
@@ -217,19 +217,19 @@
             <li class="nav-item">
                 <a class="nav-link " href="/admin/photo">
                   <i class="material-icons  align-bottom">photo_album</i>
-                  <span>Photos</span>
+                  <span>@lang('Photos')</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="user-profile-lite.html">
                   <i class="material-icons  align-bottom">videocam</i>
-                  <span>Videos</span>
+                  <span>@lang('Videos')</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="/admin/reward">
                   <i class="material-icons  align-bottom">stars</i>
-                  <span>Rewards</span>
+                  <span>@lang('Rewards')</span>
                 </a>
               </li>
             </ul>
@@ -249,7 +249,7 @@
               <li class="nav-item">
                 <a class="nav-link " href="/admin/blog">
                   <i class="material-icons align-bottom">description</i>
-                  <span>Blogs</span>
+                  <span>@lang('Blogs')</span>
                 </a>
               </li>
              
