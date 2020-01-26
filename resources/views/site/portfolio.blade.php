@@ -1,5 +1,5 @@
 <div class="container mx-auto" style="margin: 100px 0;">
-    <h2 class="text-center text-navy">@lang('Photos')</h2>
+    <h2 class="text-center text-uppercase text-navy">@lang('Photos')</h2>
 
     <div class="row justify-content-around">
 
