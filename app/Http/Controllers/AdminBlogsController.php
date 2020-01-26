@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App;
 
 class AdminBlogsController extends Controller
 {
@@ -11,9 +12,51 @@ class AdminBlogsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         dump ('AdminBlogsController@index');
+
+        $search = null;
+       if($request->search !=null)
+       {
+           $search = htmlspecialchars($request->search);
+    
+       }
+       
+       $title_lang = 'title_'.current_lacale();
+       $desc_lang = 'description_'.current_lacale() ;   
+       $category_lang = 'category_'.current_lacale();
+       
+       session(['category'=>  $request->category]);
+
+    if($request->search !=null)
+    {
+        $blogs = App\Blog::
+        where('title_ru', 'like','%'.$search.'%')
+        
+        ->orwhere('title_en', 'like','%'.$search.'%')
+        ->orwhere('title_ru', 'like','%'.$search.'%')
+        ->orwhere('description_ru', 'like','%'.$search.'%')
+        ->orwhere('description_en', 'like','%'.$search.'%')       
+        
+        ->orderBy('id', 'desc')->paginate(4);
+
+    }   
+    elseif($request->category == null || $request->category == 'all' )
+    {
+         $blogs = App\Blog::orderBy('id', 'desc')->paginate(4);
+    } else
+    {
+        $blogs = App\Blog::where('category_id', '=', session('category'))->orderBy('id', 'desc')->paginate(4);
+    }
+   
+      
+
+       $categories = App\Category::all();
+       
+     
+         return view('admin.blog.index', compact('title_lang',
+          'category_lang', 'desc_lang', 'blogs',  'categories', 'search'));
     }
 
     /**

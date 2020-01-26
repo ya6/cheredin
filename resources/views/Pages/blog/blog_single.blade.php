@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container">
-    <h2 class="text-center  my-4 text-navy ">@lang('Blog single')</h2>
+    <h2 class="text-center text-uppercase my-4 text-navy ">@lang('Blog single')</h2>
 
     <div class="row">
         <div class="order-xs-2  order-sm-2 order-md-1 col-sm-12 col-md-8" style="b order: 2px solid blue">

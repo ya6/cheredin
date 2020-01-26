@@ -203,13 +203,13 @@
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center pr-3 mt-4 mb-1 text-muted">
             <a class="nav-link active" href="/admin/about/1">
-              <span>@lang('About me')</span>
+              <span class="text-uppercase">@lang('About me')</span>
             </a>
             <i class="material-icons  align-bottom">person</i>
             </h6>
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>@lang('MEDIA GALLERY')</span>
+              <span class="text-uppercase">@lang('Media gallery')</span>
             <i class="material-icons  align-bottom">photo</i>
             </h6>
 
@@ -235,7 +235,7 @@
             </ul>
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>@lang('BLOG')</span>
+              <span class="text-uppercase">@lang('Blog')</span>
               <i class="material-icons  align-bottom">list</i>
           </h6>
             <ul class="nav flex-column">
@@ -249,7 +249,7 @@
               <li class="nav-item">
                 <a class="nav-link " href="/admin/blog">
                   <i class="material-icons align-bottom">description</i>
-                  <span>@lang('Blogs')</span>
+                  <span>@lang('Blog')</span>
                 </a>
               </li>
              
@@ -257,7 +257,7 @@
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center pr-3 mt-4 mb-1 text-muted">
             <a class="nav-link active" href="index.html">
-              <span>@lang('CONTACTS')</span>
+              <span class="text-uppercase">@lang('Contacts')</span>
             </a>
             <i class="material-icons  align-bottom">email</i>
             </h6>

@@ -13,32 +13,19 @@ class BlogController extends Controller
      */
     public function index(Request $request)
 
-    {   //  dump($request);
-      
-      //  dump($request->category);
-       // dump(session('blog_category'));
+    {   
        $search = null;
        if($request->search !=null)
        {
            $search = htmlspecialchars($request->search);
-       // dump('searh',$request->search);
+    
        }
        
-      
-        if((session('lang')) != null)
-        {
-            
-           App::setLocale(session('lang'));
-   
-           $title_lang = 'title_'.session('lang') ;
-           $desc_lang = 'description_'.session('lang');
-           
-           $category_lang = 'category_'.session('lang');
-       } else {
-           $title_lang = 'title_en' ;
-           $desc_lang = 'description_en';
-           $category_lang = 'category_en';
-   }
+       $title_lang = 'title_'.current_lacale();
+       $desc_lang = 'description_'.current_lacale() ;   
+       $category_lang = 'category_'.current_lacale();
+
+    
      
          $page_en ='BLOG';
          $page_ru ='СТАТЬИ';
@@ -70,7 +57,7 @@ class BlogController extends Controller
        $lastblogs =  App\Blog::orderBy('id', 'desc')->take(2)->get();
 
        $categories = App\Category::all();
-       // dd($blogs);
+       
      
          return view('Pages.blog.index', compact('page_en', 'page_ru', 'title_lang',
           'category_lang', 'desc_lang', 'blogs', 'lastblogs', 'categories', 'search'));
@@ -116,20 +103,10 @@ class BlogController extends Controller
         // dump('searh',$request->search);
         }
 
-        if((session('lang')) != null)
-        {
-            
-           App::setLocale(session('lang'));
-   
-           $title_lang = 'title_'.session('lang') ;
-           $desc_lang = 'description_'.session('lang');
-           
-           $category_lang = 'category_'.session('lang');
-       } else {
-           $title_lang = 'title_en' ;
-           $desc_lang = 'description_en';
-           $category_lang = 'category_en';
-   }
+       
+        $title_lang = 'title_'.current_lacale();
+        $desc_lang = 'description_'.current_lacale() ;   
+        $category_lang = 'category_'.current_lacale();
      
          $page_en ='BLOG';
          $page_ru ='СТАТЬИ';
