@@ -46,8 +46,8 @@ class WorkoutController extends Controller
     public function store(Request $request)
     {
         
-        dump('#workout store');
-        dump($request);
+      //  dump('#workout store');
+      //  dump($request);
 
 
         $attributes =  $request->validate([

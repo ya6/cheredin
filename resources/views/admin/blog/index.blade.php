@@ -93,7 +93,7 @@
         <div class="order-xs-1  order-sm-1 order-md-2 col-md-4 col-sm-12 my-xs-4" style="b order: 2px solid green">
 
             <div class=" my-4" style="b order:1px solid red">
-                <a name="" id="" class="rounded-0 btn btn-primary btn-lg btn-block " href="/blog/{{ $blog->id }}"
+                <a name="" id="" class="rounded-0 btn btn-primary btn-lg btn-block " href="/admin/blog/create"
                     role="button"> @lang('Create post')
                 </a>
             </div>

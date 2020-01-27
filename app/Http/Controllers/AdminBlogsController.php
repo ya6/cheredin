@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Blog;
 use App;
+use App\Category;
 
 class AdminBlogsController extends Controller
 {
@@ -66,7 +68,10 @@ class AdminBlogsController extends Controller
      */
     public function create()
     {
-        //
+        App::setLocale(session('lang'));
+        $categories = Category::all();
+        $category_lang = 'category_'.current_lacale();
+        return view('admin.blog.blog_create', compact('categories', 'category_lang'));
     }
 
     /**
@@ -77,7 +82,30 @@ class AdminBlogsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dump ('AdminBlogsController@store');
+        dd($request);
+        $attributes =  $request->validate([
+            'image' => 'image',
+            'title_en' => 'required',
+            'title_ru' => 'required',
+            'description_en' => 'required',
+            'description_ru' => 'required',  
+        ]);
+
+        if( request()->has('image')== true ) {
+                
+            $image = $request->file('image');
+            $image->move(public_path().'/images/blogs', $image->getClientOriginalName());
+            
+            $attributes['image'] = $image -> getClientOriginalName();
+        }
+
+        Blog::create($attributes);
+        
+       // $blogs = Blog::all();
+    
+       // return view('admin.blog.index', compact('workouts'));
+       return redirect('admin/blog');
     }
 
     /**
