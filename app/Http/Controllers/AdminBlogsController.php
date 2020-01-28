@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Blog;
 use App;
 use App\Category;
+use Illuminate\Support\Facades\Auth;
 
 class AdminBlogsController extends Controller
 {
@@ -16,7 +17,7 @@ class AdminBlogsController extends Controller
      */
     public function index(Request $request)
     {
-        dump ('AdminBlogsController@index');
+       // dump ('AdminBlogsController@index');
 
         $search = null;
        if($request->search !=null)
@@ -82,16 +83,18 @@ class AdminBlogsController extends Controller
      */
     public function store(Request $request)
     {
-        dump ('AdminBlogsController@store');
-        dd($request);
+      //  dump ('AdminBlogsController@store');
+      //  dump($request);
         $attributes =  $request->validate([
             'image' => 'image',
             'title_en' => 'required',
             'title_ru' => 'required',
             'description_en' => 'required',
-            'description_ru' => 'required',  
+            'description_ru' => 'required', 
+            'category' => 'required', 
         ]);
-
+        $attributes['category_id'] = $request->category ?? '1';
+        $attributes['user_id'] = Auth::user()->id ?? '1';
         if( request()->has('image')== true ) {
                 
             $image = $request->file('image');
@@ -99,7 +102,7 @@ class AdminBlogsController extends Controller
             
             $attributes['image'] = $image -> getClientOriginalName();
         }
-
+dump($attributes);
         Blog::create($attributes);
         
        // $blogs = Blog::all();
@@ -150,6 +153,15 @@ class AdminBlogsController extends Controller
      */
     public function destroy($id)
     {
-        //
+       // dump ('AdminBlogsController@destroy');
+
+        $blog = Blog::find($id);
+      
+      
+           $blog->delete();
+       
+ 
+ 
+        return back();
     }
 }

@@ -12,7 +12,9 @@ class Blog extends Model
         'title_en',
         'title_ru',
         'description_en',
-        'description_ru'
+        'description_ru',
+        'category_id',
+        'user_id'
 
     ];
 

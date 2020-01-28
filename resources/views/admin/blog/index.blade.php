@@ -64,11 +64,11 @@
                                 </a>
                             </div>
 
-                            <div class="  ml-auto " style="b order:1px solid red">
-                                <a name="" id="" class="rounded-0    btn btn-sm btn-danger "
-                                    href="/blog/{{ $blog->id }}" role="button" style="width:10em"> @lang('Delete post')
-                                </a>
-                            </div>
+                            <form  class="ml-auto mr-4" action="/admin/blog/{{$blog->id}} " method="post">
+                                @method('DELETE')
+                                @csrf
+                                <button class="rounded-0  btn btn-sm btn-danger " type="submit">@lang('Delete post')</button>
+                            </form>
 
                         </div>
                     </div>
