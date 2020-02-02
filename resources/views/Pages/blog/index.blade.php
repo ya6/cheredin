@@ -45,7 +45,7 @@
                         <div class="row">
                             <div class="col pl-5 pb-3">
                                 <p class="h6 mt-2"> <i class=" text-secondary material-icons align-text-top">watch</i>
-                                    {{ $blog->created_at->isoFormat('DD-MM-Y') }}</p>
+                                    {{ $blog->updated_at->isoFormat('DD-MM-Y') }}</p>
                                 <p class="h5"> <i class="text-secondary material-icons align-top">person </i>
                                     {{ $blog->user->name }}</p>
                                 <p class="h6 "> <i class="text-secondary material-icons align-text-top ">label</i>

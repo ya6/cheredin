@@ -22,7 +22,7 @@ Route::get('/', 'SiteController@index');
 Route::resource('/portfolio', 'PortfolioController');
 
 Route::get('/about', 'AboutController@index');
-//Route::resource('/about', 'AboutController');
+
 Route::resource('/blog', 'BlogController');
 Route::resource('/contact', 'ContactController');
 
@@ -54,7 +54,13 @@ Route::resource('/admin/partner', 'PartnerController');
 Route::resource('/admin/takepart', 'TakePartController');
 
 Route::resource('/admin/blog/category', 'CategoriesController')->name('get','profile');
+
+Route::get('/admin/blog/{id}/comment', 'CommentController@index');
+Route::delete('/admin/blog/{id}/comment/{id2}', 'CommentController@destroy');
+
 Route::resource('/admin/blog', 'AdminBlogsController');
+
+
 
 
 

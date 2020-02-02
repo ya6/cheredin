@@ -44,7 +44,7 @@
 
               <div class="d-flex">
               <div class="mx-auto text-light"><span>Copyright © 2020 @lang('Vladimir Cheredin') </span> </div> 
-              <div><a   class="" href="№" style ="font-size:0.7rem">site by Yakubouski A. st/03/11/19 up/26/01/20</a></div>
+              <div><a   class="" href="№" style ="font-size:0.7rem">site by Yakubouski A. st/03/11/19 up/02/02/20</a></div>
               </div>  
              
           

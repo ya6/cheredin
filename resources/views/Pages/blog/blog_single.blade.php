@@ -12,7 +12,7 @@
             <div class="bg-light p-4" style="b order: 2px solid red">
                 <div class="card border-0">
                     <p class="h6 mt-2"> <i class=" text-secondary material-icons align-text-top">watch</i>
-                        {{ $blog->created_at->isoFormat('DD-MM-Y') }}</p>
+                        {{ $blog->updated_at->isoFormat('DD-MM-Y') }}</p>
                     <div class="card-header card border-0">
                         <p class="h4 my-3">{{ $blog->$title_lang }}</p>
                     </div>

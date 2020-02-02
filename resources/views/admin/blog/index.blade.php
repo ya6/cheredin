@@ -44,7 +44,7 @@
                         <div class="row">
                             <div class="col pl-5 pb-3">
                                 <p class="h6 mt-2"> <i class=" text-secondary material-icons align-text-top">watch</i>
-                                    {{ $blog->created_at->isoFormat('DD-MM-Y') }}</p>
+                                    {{ $blog->updated_at->isoFormat('DD-MM-Y') }}</p>
                                 <p class="h5"> <i class="text-secondary material-icons align-top">person </i>
                                     {{ $blog->user->name }}</p>
                                 <p class="h6 "> <i class="text-secondary material-icons align-text-top ">label</i>
@@ -60,9 +60,17 @@
 
                             <div class=" ml-4 mb-4" style="b order:1px solid red">
                                 <a name="" id="" class="rounded-0    btn btn-outline-primary "
-                                    href="/blog/{{ $blog->id }}" role="button" style="width:10em"> @lang('Edit post')
+                                    href="/admin/blog/{{ $blog->id }}/edit" role="button" style="width:10em"> @lang('Edit post')
                                 </a>
                             </div>
+
+                            <div class=" ml-4 mb-4" style="b order:1px solid red">
+                            <a name="" id="" class="rounded-0  btn btn-sm btn-info"
+                                    href="/admin/blog/{{ $blog->id }}/comment" role="button" style="width:10em"> @lang('Comments')
+                                </a>
+                               
+                            </div>
+
 
                             <form  class="ml-auto mr-4" action="/admin/blog/{{$blog->id}} " method="post">
                                 @method('DELETE')

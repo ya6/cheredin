@@ -102,7 +102,7 @@ class AdminBlogsController extends Controller
             
             $attributes['image'] = $image -> getClientOriginalName();
         }
-dump($attributes);
+    //dump($attributes);
         Blog::create($attributes);
         
        // $blogs = Blog::all();
@@ -117,9 +117,10 @@ dump($attributes);
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        //
+         //  dd('AdminBlogsController@show');
+    
     }
 
     /**
@@ -130,7 +131,20 @@ dump($attributes);
      */
     public function edit($id)
     {
-        //
+        dump ('AdminBlogsController@edit');
+
+         
+        $title_lang = 'title_'.current_lacale();
+        $desc_lang = 'description_'.current_lacale() ;   
+        $category_lang = 'category_'.current_lacale();
+
+        $categories = App\Category::all();
+        // dd($blogs);
+ 
+        $blog = App\Blog::find($id);
+
+        return view('admin.blog.blog_edit', compact( 'title_lang',
+          'category_lang', 'desc_lang', 'blog', 'categories'));
     }
 
     /**
@@ -142,7 +156,33 @@ dump($attributes);
      */
     public function update(Request $request, $id)
     {
-        //
+        dump ('AdminBlogsController@update');
+        dump($request);
+        $attributes =  $request->validate([
+            'image' => 'image',
+            'title_en' => 'required',
+            'title_ru' => 'required',
+            'description_en' => 'required',
+            'description_ru' => 'required', 
+            'category' => 'required', 
+        ]);
+        $attributes['category_id'] = $request->category ?? '1';
+        $attributes['user_id'] = Auth::user()->id ?? '1';
+        if( request()->has('image')== true ) {
+                
+            $image = $request->file('image');
+            $image->move(public_path().'/images/blogs', $image->getClientOriginalName());
+            
+            $attributes['image'] = $image -> getClientOriginalName();
+        }
+
+        $blog = App\Blog::find($id);
+        $blog->update($attributes);
+      
+        
+       return redirect('/admin/blog');
+
+
     }
 
     /**

@@ -13,9 +13,13 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+      //  dump('CommentController@index');
+        $blog = Blog::find($id);
+
+        return view('admin.blog.comment_index', compact('blog'));
+
     }
 
     /**
@@ -94,8 +98,19 @@ return back();
      * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
+    public function destroy($id, $id2)
     {
-        //
+         //  dump('CommentController@destroy');
+
+
+           $comment=Comment::find($id2);
+          //dd($comment);
+          
+           $comment->delete();
+           //dd($comment);
+
+           return back();
+
+
     }
 }
