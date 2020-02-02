@@ -16,16 +16,6 @@ class SiteController extends Controller
       $desc_lang = 'description_'.current_lacale();
  
 
-//     if((session('lang')) != '')
-//      {
-//         App::setLocale(session('lang'));
-
-//         $title_lang = 'title_'.session('lang') ;
-//         $desc_lang = 'description_'.session('lang');
-//     } else {
-//         $title_lang = 'title_ru' ;
-//         $desc_lang = 'description_ru';
-// }
       $page_en ='HOME';
       $page_ru ='ГЛАВНАЯ';
 
@@ -43,6 +33,8 @@ class SiteController extends Controller
         $takepart = App\TakePart::first();
         $home_video = App\HomeVideo::first();
         $home_event = App\HomeEvent::first();
+
+       
        
         $lastblogs =  App\Blog::orderBy('id', 'desc')->take(2)->get();
 

@@ -24,7 +24,7 @@ Route::resource('/portfolio', 'PortfolioController');
 Route::get('/about', 'AboutController@index');
 
 Route::resource('/blog', 'BlogController');
-Route::resource('/contact', 'ContactController');
+Route::get('/contact', 'ContactController@index');
 
 Route::post('/send', 'MailController@mail');
 
@@ -60,6 +60,7 @@ Route::delete('/admin/blog/{id}/comment/{id2}', 'CommentController@destroy');
 
 Route::resource('/admin/blog', 'AdminBlogsController');
 
+Route::resource('/admin/contact', 'ContactController');
 
 
 

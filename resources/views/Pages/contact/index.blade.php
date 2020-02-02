@@ -15,19 +15,19 @@
 <div class="col-md-3 text-center">
         <img src="/images/icons/icon_phone.png" alt="icon" width="50">
         <h5 class="" >@lang('Phone')</h5>
-        <p>+375 29 500-00-00</p>
+        <p>{{ $contact->phone }}</p>
 </div>
 
 <div class="col-md-3 text-center">
         <img src="/images/icons/icon_mail.png" alt="icon" width="45">
         <h5 class="" >@lang('E-mail')</h5>
-        <p>cheredin@mail.ru</p>
+        <p>{{ $contact->email }}</p>
 </div>
 
 <div class="col-md-3 text-center">
         <img src="/images/icons/icon_location.png" alt="icon" width="50">
         <h5 class="">@lang('Address')</h5>
-        <p>Mozyr, Belarus</p>
+        <p>{{ $contact->$address_lang }}</p>
 </div>
 
 

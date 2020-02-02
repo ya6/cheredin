@@ -14,17 +14,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        if((session('lang')) != null)
-        {
-            
-           App::setLocale(session('lang'));
-   
-           $title_lang = 'title_'.session('lang') ;
-           $desc_lang = 'description_'.session('lang');
-       } else {
-           $title_lang = 'title_en' ;
-           $desc_lang = 'description_en';
-   }
+        $title_lang = 'title_'.current_lacale();
+        $desc_lang = 'description_'.current_lacale();
+        $address_lang = 'address_'.current_lacale() ;
      
          $page_en ='CONTACT';
          $page_ru ='КОНТАКТЫ';
@@ -32,8 +24,14 @@ class ContactController extends Controller
          $lastblogs =  App\Blog::orderBy('id', 'desc')->take(2)->get();
 
       //  dd($blogs);
+
+      $contact = Contact::first();
+
      
-         return view('Pages.contact.index', compact('page_en', 'page_ru', 'title_lang', 'desc_lang', 'lastblogs'));
+     // dd($contact);
+     
+         return view('Pages.contact.index', compact('page_en', 'page_ru', 'title_lang',
+         'desc_lang', 'lastblogs', 'contact', 'address_lang'));
     }
 
     /**
@@ -65,7 +63,12 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+       // dd('ContactController@show');
+       
+       App::setLocale(session('lang'));
+        $contact = App\Contact::first();
+
+        return view('admin.contact.index', compact('contact'));
     }
 
     /**
@@ -76,7 +79,9 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        //
+        // dd('ContactController@edit');
+
+        return view('admin.contact.contact_edit', compact('contact'));
     }
 
     /**
@@ -87,8 +92,24 @@ class ContactController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Contact $contact)
-    {
-        //
+    { 
+       // dd($request);
+        $attributes =  $request->validate([
+           
+            'phone' => 'required',
+            'email' => 'required|email',
+            'address_en' => 'required',
+            'address_ru' => 'required',
+        ]);
+      
+      
+    
+       
+        $contact->update($attributes);
+        
+      
+    
+        return redirect('/admin/contact/1');
     }
 
     /**

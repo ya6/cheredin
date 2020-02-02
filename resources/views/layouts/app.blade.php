@@ -256,7 +256,7 @@
             </ul>
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center pr-3 mt-4 mb-1 text-muted">
-            <a class="nav-link active" href="index.html">
+            <a class="nav-link active" href="/admin/contact/1">
               <span class="text-uppercase">@lang('Contacts')</span>
             </a>
             <i class="material-icons  align-bottom">email</i>
